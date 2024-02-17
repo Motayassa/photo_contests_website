@@ -5,8 +5,14 @@ name = "pypi"
 
 [packages]
 django = "*"
+djangorestframework = "*"
+pillow = "*"
+django-imagekit = "*"
 
 [dev-packages]
+flake8 = "*"
+flake8-bugbear = "*"
+pep8-naming = "*"
 
 [requires]
 python_version = "3.12"
