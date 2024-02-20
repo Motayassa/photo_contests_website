@@ -1,11 +1,14 @@
 # Project brief
 Photo_contest_website -  is a project of the s&p agency mentorship programme. It is a website with a gallery of photos of registered users. Photos are subject to moderation before being displayed in the gallery. Photos can be evaluated and commented.
+Status: under development.
 
+## Programming language
+Python 3.12.1
 
-* краткое описание проекта
+## Database management system
+PostgreSQL 14.10
+
 * ссылки на документацию (опционально)
-* наименование и версию используемого языка программирования
-* наименование и версии используемых в проекте баз данных
 * информацию о зависимостях проекта и их версиях
 * инструкцию по установке проекта на локальной машине разработчика
 * инструкцию по запуску проекта на машине разработчика
