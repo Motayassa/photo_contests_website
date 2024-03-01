@@ -6,7 +6,7 @@ To change settings file:
 
 from os import environ
 import django_stubs_ext
-from split_settings.tools import optional
+from split_settings.tools import optional, include
 
 django_stubs_ext.monkeypatch()
 
@@ -29,6 +29,4 @@ base_settings = [
     optional('environments/local.py'),
 ]
 
-
-# Include settings:
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! include(*base_settings)
+include(*base_settings)

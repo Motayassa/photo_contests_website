@@ -1,5 +1,5 @@
 from photo_contest_website.settings.components import config, Csv
-from .base import *
+from photo_contest_website.settings.environments.base import *
 
 
 # Setting the development status:
