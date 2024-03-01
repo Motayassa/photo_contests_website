@@ -12,6 +12,7 @@ psycopg2 = "*"
 dj-database-url = "*"
 python-decouple = "*"
 django-split-settings = "*"
+django-stubs-ext = "*"
 
 [dev-packages]
 flake8 = "*"
