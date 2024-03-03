@@ -1,6 +1,7 @@
 from pathlib import Path
 
-from decouple import AutoConfig, Csv
+from decouple import AutoConfig
+from decouple import Csv
 
 
 BASE_DIR = Path(__file__).parent.parent.parent
