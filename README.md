@@ -8,8 +8,20 @@ Python 3.12.1
 ## Database management system
 PostgreSQL 14.10
 
+
+## Project dependsencies
+django = "5.0.2"
+djangorestframework = "3.14.0"
+pillow = "10.2.0"
+django-imagekit = "5.0.0"
+psycopg2 = "2.9.9"
+dj-database-url = "2.1.0"
+python-decouple = "3.8"
+django-split-settings = "1.2.0"
+django-stubs-ext = "4.2.7"
+django-stubs = "4.2.7"
+
 * ссылки на документацию (опционально)
-* информацию о зависимостях проекта и их версиях
 * инструкцию по установке проекта на локальной машине разработчика
 * инструкцию по запуску проекта на машине разработчика
 * информацию о существующих окружениях, в которых запускается проект
