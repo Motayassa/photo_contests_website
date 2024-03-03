@@ -3,10 +3,11 @@ This is a django-split-settings main file.
 To change settings file:
 `DJANGO_ENV=production python manage.py runserver`
 """
-
 from os import environ
+
 import django_stubs_ext
-from split_settings.tools import optional, include
+from split_settings.tools import include
+from split_settings.tools import optional
 
 django_stubs_ext.monkeypatch()
 
@@ -22,7 +23,7 @@ base_settings = [
     "components/restframework.py",  # django REST framework
     "components/swagger.py",  # documentation
     # Select the right env:
-    "environments/{0}.py".format(_ENV),
+    "environments/{}.py".format(_ENV),
     # Optionally override some settings:
     optional("environments/local.py"),
 ]
