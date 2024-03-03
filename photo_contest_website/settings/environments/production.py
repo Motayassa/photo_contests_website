@@ -10,8 +10,6 @@ from photo_contest_website.settings.environments.base import *
 
 
 # Setting the production status:
-DEBUG = config('DEBUG', cast=bool)
+DEBUG = config("DEBUG", cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS',
-                       default="127.0.0.1,localhost",
-                       cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="127.0.0.1,localhost", cast=Csv())

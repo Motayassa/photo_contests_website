@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # CORE SETTINGS
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config("SECRET_KEY")
 
 # Application definition
 INSTALLED_APPS = [
@@ -66,7 +66,7 @@ USE_TZ = True
 # STATIC FILES SETTINGS
 STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # MEDIA FILES SETTINGS
 MEDIA_URL = "/media/"
