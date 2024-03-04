@@ -1,6 +1,6 @@
 from photo_contest_website.settings.components import config
 from photo_contest_website.settings.components import Csv
-from photo_contest_website.settings.environments.base import *
+from photo_contest_website.settings.environments.base import *  # noqa
 
 
 # Setting the development status:
