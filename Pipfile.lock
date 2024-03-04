@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7231cf2fa62566a051ed9f1f2e9b5c3e11cac022c286104b59b74c3dfb3e6581"
+            "sha256": "282479668de073baac16a0941237e47743bcf9605e648699fa7f0c43e3543ef7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,12 +34,12 @@
         },
         "django": {
             "hashes": [
-                "sha256:56ab63a105e8bb06ee67381d7b65fe6774f057e41a8bab06c8020c8882d8ecd4",
-                "sha256:b5bb1d11b2518a5f91372a282f24662f58f66749666b0a286ab057029f728080"
+                "sha256:5c7d748ad113a81b2d44750ccc41edc14e933f56581683db548c9257e078cc83",
+                "sha256:5fb37580dcf4a262f9258c1f4373819aacca906431f505e4688e37f3a99195df"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.10'",
-            "version": "==5.0.2"
+            "version": "==5.0.3"
         },
         "django-appconf": {
             "hashes": [
@@ -298,14 +298,6 @@
             "markers": "python_version >= '3.8'",
             "version": "==24.2.0"
         },
-        "classify-imports": {
-            "hashes": [
-                "sha256:7abfb7ea92149b29d046bd34573d247ba6e68cc28100c801eba4af17964fc40e",
-                "sha256:dbbc264b70a470ed8c6c95976a11dfb8b7f63df44ed1af87328bbed2663f5161"
-            ],
-            "markers": "python_version >= '3.7'",
-            "version": "==4.2.0"
-        },
         "click": {
             "hashes": [
                 "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28",
@@ -331,6 +323,15 @@
             "index": "pypi",
             "markers": "python_full_version >= '3.8.1'",
             "version": "==24.2.6"
+        },
+        "isort": {
+            "hashes": [
+                "sha256:48fdfcb9face5d58a4f6dde2e72a1fb8dcaf8ab26f95ab49fab84c2ddefb0109",
+                "sha256:8ca5e72a8d85860d5a3fa69b8745237f2939afe12dbf656afbcb47fe72d947a6"
+            ],
+            "index": "pypi",
+            "markers": "python_full_version >= '3.8.0'",
+            "version": "==5.13.2"
         },
         "markdown-it-py": {
             "hashes": [
@@ -528,15 +529,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==6.0.1"
-        },
-        "reorder-python-imports": {
-            "hashes": [
-                "sha256:930c23a42192b365e20e191a4d304d93e645bd44c242d8bc64accc4a3b2b0f3d",
-                "sha256:f93106a662b0c034ca81c91fd1c2f21a1e94ece47c9f192672e2a13c8ec1856c"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==3.12.0"
         },
         "rich": {
             "hashes": [

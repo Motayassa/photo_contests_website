@@ -1,13 +1,14 @@
 """
+Модуль содержит набор модулей с настройками
 This is a django-split-settings main file.
 To change settings file:
 `DJANGO_ENV=production python manage.py runserver`
 """
+
 from os import environ
 
 import django_stubs_ext
-from split_settings.tools import include
-from split_settings.tools import optional
+from split_settings.tools import include, optional
 
 django_stubs_ext.monkeypatch()
 

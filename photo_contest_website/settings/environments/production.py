@@ -4,10 +4,9 @@ This file contains all the settings used in production.
 This file is required and if development.py is present these
 values are overridden.
 """
-from photo_contest_website.settings.components import config
-from photo_contest_website.settings.components import Csv
-from photo_contest_website.settings.environments.base import *  # noqa
 
+from photo_contest_website.settings.components import Csv, config
+from photo_contest_website.settings.environments.base import *  # noqa
 
 # Setting the production status:
 DEBUG = config("DEBUG", cast=bool)
