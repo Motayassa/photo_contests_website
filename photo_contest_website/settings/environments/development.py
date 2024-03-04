@@ -1,7 +1,5 @@
-from photo_contest_website.settings.components import config
-from photo_contest_website.settings.components import Csv
+from photo_contest_website.settings.components import Csv, config
 from photo_contest_website.settings.environments.base import *  # noqa
-
 
 # Setting the development status:
 DEBUG = config("DEBUG", default=True, cast=bool)

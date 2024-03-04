@@ -1,8 +1,11 @@
+"""
+Модуль содержит файлы с настройками проекта,
+расщепленные по компонентам
+"""
+
 from pathlib import Path
 
-from decouple import AutoConfig
-from decouple import Csv
-
+from decouple import AutoConfig, Csv
 
 BASE_DIR = Path(__file__).parent.parent.parent
 
