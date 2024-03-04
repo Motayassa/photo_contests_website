@@ -11,11 +11,21 @@ django-imagekit = "*"
 psycopg2 = "*"
 dj-database-url = "*"
 python-decouple = "*"
+django-split-settings = "*"
+django-stubs-ext = "*"
+django-stubs = "*"
 
 [dev-packages]
 flake8 = "*"
 flake8-bugbear = "*"
 pep8-naming = "*"
+mypy = "*"
+black = "*"
+reorder-python-imports = "*"
+bandit = "*"
+yesqa = "*"
+pyupgrade = "*"
+autoflake = "*"
 
 [requires]
 python_version = "3.12"
