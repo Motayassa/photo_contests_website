@@ -1,0 +1,59 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: trailing-whitespace
+      # предупреждает о добавлении больших файлов в Git
+    -   id: check-added-large-files
+      # Проверьте наличие файлов, содержащих строки конфликта слияния.
+    -   id: check-merge-conflict
+      # Пытается загрузить все файлы yaml для проверки синтаксиса.
+    -   id: check-yaml
+      # Проверяет, что файлы заканчиваются новой строкой и только новой строкой.
+    -   id: end-of-file-fixer
+      # Проверьте импорт отладчика и breakpoint()вызовы py37+ в исходном коде Python.
+    -   id: debug-statements
+      # Просто проверьте, анализируются ли файлы как действительные Python.
+    -   id: check-ast
+      # Проверяет наличие закрытых ключей.
+    -   id: detect-private-key
+-   repo: 'https://github.com/pycqa/flake8'
+    rev: 7.0.0
+    hooks:
+    -   id: flake8
+        additional_dependencies:
+          - flake8-bugbear
+          - pep8-naming
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
+    hooks:
+    -   id: pyupgrade
+-   repo: 'https://github.com/psf/black'
+    rev: 24.2.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.0
+    hooks:
+    -   id: autoflake
+-   repo: https://github.com/asottile/yesqa
+    rev: v1.5.0
+    hooks:
+    -   id: yesqa
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.7.7
+    hooks:
+    -   id: bandit
+-   repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+    -   id: mypy
+        additional_dependencies:
+          - django-stubs
+          - django-split-settings
+          - python-decouple
+          - psycopg2
