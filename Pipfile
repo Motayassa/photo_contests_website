@@ -21,11 +21,11 @@ flake8-bugbear = "*"
 pep8-naming = "*"
 mypy = "*"
 black = "*"
-reorder-python-imports = "*"
 bandit = "*"
 yesqa = "*"
 pyupgrade = "*"
 autoflake = "*"
+isort = "*"
 
 [requires]
 python_version = "3.12"
