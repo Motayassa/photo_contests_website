@@ -8,7 +8,7 @@ class comment(models.Model):
     content = models.TextField(max_length=1000)
     publicate_date = models.DateTimeField(default=timezone.now)
     parrent_comment = models.ForeignKey(
-        "self", null=True, related_name="comment", on_delete=models.PROTECT
+        "self", null=True, related_name="comment", on_delete=models.CASCADE
     )
     #  Recursive Model Relationships
 
@@ -17,4 +17,4 @@ class comment(models.Model):
         ordering = ["-publicate_date"]
 
     def __str__(self):
-        return self.title
+        return self.content

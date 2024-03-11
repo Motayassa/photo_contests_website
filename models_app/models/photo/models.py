@@ -10,6 +10,7 @@ class Photo(models.Model):
     photos_image200px = models.ImageField(upload_to="images/%Y/%m/%d/")
     #  photos_image200px необходимо подцмать над размером и тем, как редачить фото
     # нужен ли оригинальный url фотографии?
+    url = models.URLField()
     description = models.TextField(max_length=1000)
     likes_amount = models.IntegerField()
     commemts_amount = models.IntegerField()
