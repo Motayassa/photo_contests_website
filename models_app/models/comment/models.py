@@ -7,7 +7,10 @@ class comment(models.Model):
     #  photo_id
     content = models.TextField(max_length=1000)
     publicate_date = models.DateTimeField(default=timezone.now)
-    #  необходимо добавить recoursive relationship
+    parrent_comment = models.ForeignKey(
+        "self", null=True, related_name="comment", on_delete=models.PROTECT
+    )
+    #  Recursive Model Relationships
 
     class Meta:
         indexes = [models.Index(fields=["-publicate_date"])]
