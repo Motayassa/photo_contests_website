@@ -1,10 +1,13 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
 
 class Photo(models.Model):
-    #  user_id
     #  photo_id
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="authors_photos", null=True
+    )
     title = models.CharField(max_length=50)
     photos_image = models.ImageField(upload_to="images/%Y/%m/%d/")
     photos_image200px = models.ImageField(upload_to="images/%Y/%m/%d/")
