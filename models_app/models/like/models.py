@@ -9,7 +9,7 @@ class Like(models.Model):
         User, on_delete=models.CASCADE, related_name="likes_author"
     )
     photo = models.ForeignKey(
-        Photo, on_delete=models.CASCADE, related_name="photo_like"
+        Photo, on_delete=models.CASCADE, related_name="photos_like"
     )
 
     class Meta:
