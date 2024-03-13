@@ -15,7 +15,7 @@ class Comment(models.Model):
     class Meta:
         indexes = [models.Index(fields=["-publicate_date"])]
         ordering = ["-publicate_date"]
-        app_label = "comments_model"
+        app_label = "api"
 
     def __str__(self):
         return self.content

@@ -13,4 +13,4 @@ class Like(models.Model):
     )
 
     class Meta:
-        app_label = "likes_model"
+        app_label = "api"

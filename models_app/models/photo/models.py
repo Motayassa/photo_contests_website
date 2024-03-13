@@ -20,8 +20,8 @@ class Photo(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=["-add_date"])]
-        ordering = ["-created"]
-        app_label = "photos_model"
+        ordering = ["-add_date"]
+        app_label = "api"
 
     def __str__(self):
         return self.title
