@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
-from models import photo
+
+from models_app.models.photo.models import Photo
 
 
 class Like(models.Model):
@@ -8,5 +9,8 @@ class Like(models.Model):
         User, on_delete=models.CASCADE, related_name="likes_author"
     )
     photo = models.ForeignKey(
-        photo, on_delete=models.CASCADE, related_name="photo_like"
+        Photo, on_delete=models.CASCADE, related_name="photo_like"
     )
+
+    class Meta:
+        app_label = "likes_model"

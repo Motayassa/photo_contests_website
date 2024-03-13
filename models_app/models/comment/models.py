@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class comment(models.Model):
+class Comment(models.Model):
     #  user_id
     #  photo_id
     content = models.TextField(max_length=1000)
@@ -15,6 +15,7 @@ class comment(models.Model):
     class Meta:
         indexes = [models.Index(fields=["-publicate_date"])]
         ordering = ["-publicate_date"]
+        app_label = "comments_model"
 
     def __str__(self):
         return self.content
