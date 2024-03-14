@@ -4,7 +4,12 @@ from django.utils import timezone
 
 
 class Photo(models.Model):
-    #  photo_id
+    class Status(models.TextChoices):
+        APPROVED = "App", "Approved"
+        REJECTED = "Rej", "Rejected"
+        DELETED = "Del", "Deleted"
+        MODERATION = "Mod", "Moderation"
+
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="authors_photos", null=True
     )
@@ -19,7 +24,9 @@ class Photo(models.Model):
     commemts_amount = models.IntegerField()
     publicate_date = models.DateTimeField(default=timezone.now)
     add_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=20)
+    status = models.CharField(
+        max_length=3, choices=Status.choices, default=Status.MODERATION
+    )
 
     class Meta:
         indexes = [models.Index(fields=["-add_date"])]
