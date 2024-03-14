@@ -21,7 +21,7 @@ class Photo(models.Model):
     url = models.URLField()
     description = models.TextField(max_length=1000)
     likes_amount = models.IntegerField()
-    commemts_amount = models.IntegerField()
+    comments_amount = models.IntegerField()
     publicate_date = models.DateTimeField(default=timezone.now)
     add_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
