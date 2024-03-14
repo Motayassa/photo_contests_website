@@ -1,10 +1,17 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
+from models_app.models.photo.models import Photo
+
 
 class Comment(models.Model):
-    #  user_id
-    #  photo_id
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments_author", null=True
+    )
+    photo = models.ForeignKey(
+        Photo, on_delete=models.CASCADE, related_name="photos_comment", null=True
+    )
     content = models.TextField(max_length=1000)
     publicate_date = models.DateTimeField(default=timezone.now)
     parrent_comment = models.ForeignKey(
