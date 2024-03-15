@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from models_app.models.photo.models import Photo
+from models_appl.models.photo.models import Photo
 
 
 class Like(models.Model):
