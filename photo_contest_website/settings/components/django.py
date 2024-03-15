@@ -44,7 +44,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates", "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -78,3 +78,8 @@ MEDIA_ROOT = BASE_DIR.parent.parent / "media"
 
 # Environment
 DJANGO_ENV = config("DJANGO_ENV", default="development")
+
+# Перенаправдение пользователя на домашнюю страницу
+# после успешного входа в систему
+LOGIN_REDIRECT_URL = "profile"
+LOGOUT_REDIRECT_URL = "profile"
