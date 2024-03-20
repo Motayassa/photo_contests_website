@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api.apps.ApiConfig",
     "models_appl.apps.ModelsApplConfig",
+    "accounts_api.apps.AccountsApiConfig",
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
