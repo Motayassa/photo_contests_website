@@ -84,3 +84,5 @@ DJANGO_ENV = config("DJANGO_ENV", default="development")
 # после успешного входа в систему
 LOGIN_REDIRECT_URL = "profile"
 LOGOUT_REDIRECT_URL = "profile"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
