@@ -75,7 +75,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # MEDIA FILES SETTINGS
 MEDIA_URL = "/media/"
 
-MEDIA_ROOT = BASE_DIR.parent.parent / "media"
+MEDIA_ROOT = BASE_DIR.parent.parent.parent / "media"
 
 # Environment
 DJANGO_ENV = config("DJANGO_ENV", default="development")
