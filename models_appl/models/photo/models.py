@@ -20,11 +20,11 @@ class Photo(models.Model):
     title = models.CharField(max_length=50)
     photos_image = models.ImageField(upload_to="images/%Y/%m/%d/")
     thumbnail300px = models.ImageField(
-        upload_to="images_thumbnail/%Y/%m/%d/", null=True
+        upload_to="images_thumbnail/%Y/%m/%d/", null=True, blank=True
     )
     description = models.TextField(max_length=1000)
-    likes_amount = models.IntegerField(default=0)
-    comments_amount = models.IntegerField(default=0)
+    likes_amount = models.IntegerField(default=0, blank=True)
+    comments_amount = models.IntegerField(default=0, blank=True)
     publicate_date = models.DateTimeField(default=timezone.now)
     add_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
@@ -43,7 +43,7 @@ class Photo(models.Model):
     def valid_extension(self, _img):
         if ".jpg" in _img:
             return "JPEG"
-        elif ".jpeg" in _img:
+        elif ".jpeg" or ".JPG" in _img:
             return "JPEG"
         elif ".png" in _img:
             return "PNG"
@@ -53,9 +53,9 @@ class Photo(models.Model):
         im = Image.open(image)
         width_percent = fixed_width / float(im.size[0])
         height_size = int(float(im.size[0]) * float(width_percent))
-        im = im.resize((fixed_width, height_size), Image.ANTIALIAS)
+        im = im.resize((fixed_width, height_size))
         im_io = BytesIO()
-        im.save(im_io, self.valid_extension(image.name), optimize=True, quality=99)
+        im.save(im_io, self.valid_extension(image.name), optimize=False, quality=99)
         thumbnail = File(im_io, name=image.name)
         return thumbnail
 
