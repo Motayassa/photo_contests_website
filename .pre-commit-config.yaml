@@ -60,3 +60,4 @@ repos:
           - django-split-settings
           - python-decouple
           - psycopg2
+          - Pillow
