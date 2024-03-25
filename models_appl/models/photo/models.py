@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.core.files import File
 from django.db import models
 from django.utils import timezone
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 class Photo(models.Model):
@@ -49,11 +49,8 @@ class Photo(models.Model):
             return "PNG"
 
     def make_thumbnail(self, image):
-        fixed_width = 300
         im = Image.open(image)
-        width_percent = fixed_width / float(im.size[0])
-        height_size = int(float(im.size[0]) * float(width_percent))
-        im = im.resize((fixed_width, height_size))
+        im = ImageOps.contain(im, (300, 300), method=Image.LANCZOS)
         im_io = BytesIO()
         im.save(im_io, self.valid_extension(image.name), optimize=False, quality=99)
         thumbnail = File(im_io, name=image.name)
