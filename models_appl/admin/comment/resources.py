@@ -7,6 +7,6 @@ from models_appl.models.comment.models import Comment
 class CommentAdmin(admin.ModelAdmin):
     list_display = ["author", "photo", "content", "publicate_date", "parrent_comment"]
     list_filter = ["author", "photo", "publicate_date"]
-    search_fields = ["author", "content"]
+    search_fields = ["author__username", "content"]
     date_hierarchy = "publicate_date"
     ordering = ["publicate_date", "author"]

@@ -15,7 +15,7 @@ class Comment(models.Model):
     content = models.TextField(max_length=1000)
     publicate_date = models.DateTimeField(default=timezone.now)
     parrent_comment = models.ForeignKey(
-        "self", null=True, related_name="comments", on_delete=models.CASCADE
+        "self", null=True, blank=True, related_name="comments", on_delete=models.CASCADE
     )
     #  Recursive Model Relationships
 

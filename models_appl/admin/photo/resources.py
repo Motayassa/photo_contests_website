@@ -9,6 +9,7 @@ class PhotoAdmin(admin.ModelAdmin):
         "author",
         "title",
         "photos_image",
+        "thumbnail300px",
         "description",
         "status",
         "add_date",
@@ -24,6 +25,6 @@ class PhotoAdmin(admin.ModelAdmin):
         "likes_amount",
         "comments_amount",
     ]
-    search_fields = ["author", "title", "description"]
+    search_fields = ["author__username", "title", "description"]
     date_hierarchy = "add_date"
     ordering = ["add_date", "author"]
