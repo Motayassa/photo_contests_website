@@ -25,6 +25,7 @@ class PhotoAdmin(admin.ModelAdmin):
         "likes_amount",
         "comments_amount",
     ]
+    prepopulated_fields = {"slug": ("title",)}
     search_fields = ["author__username", "title", "description"]
     date_hierarchy = "add_date"
     ordering = ["add_date", "author"]

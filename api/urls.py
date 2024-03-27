@@ -7,5 +7,9 @@ app_name = "api"
 
 urlpatterns = [
     path("", photo_contest_gallery_list, name="gallery"),
-    path("<int:id>/", photo_detail, name="photo_detail"),
+    path(
+        "<int:year>/<int:month>/<int:day>/<slug:photo>/",
+        photo_detail,
+        name="photo_detail",
+    ),
 ]

@@ -3,6 +3,7 @@ from io import BytesIO
 from django.contrib.auth.models import User
 from django.core.files import File
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from PIL import Image, ImageOps
 
@@ -32,10 +33,13 @@ class Photo(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="authors_photos", null=True
     )
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=75)
     photos_image = models.ImageField(upload_to="images/%Y/%m/%d/")
     thumbnail300px = models.ImageField(
         upload_to="images_thumbnail/%Y/%m/%d/", null=True, blank=True
+    )
+    slug = models.SlugField(
+        max_length=75, unique_for_date="publicate_date", null=True, blank=True
     )
     description = models.TextField(max_length=1000)
     likes_amount = models.IntegerField(default=0, blank=True)
@@ -74,3 +78,14 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse(
+            "api:photo_detail",
+            args=[
+                self.publicate_date.year,
+                self.publicate_date.month,
+                self.publicate_date.day,
+                self.slug,
+            ],
+        )
