@@ -28,6 +28,7 @@ urlpatterns = [
     path("accounts/", include("accounts_api.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", TemplateView.as_view(template_name="profile.html"), name="profile"),
+    path("api/", include("api.urls", namespace="api")),
 ]
 
 if DEBUG:

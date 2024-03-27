@@ -1,0 +1,18 @@
+{% extends "api/base.html" %}
+
+{% block title %}Photo contest's gallery{% endblock %}
+
+{% block content %}
+    {% for photo in photos %}
+        <a href="{% url 'api:photo_detail' photo.id %}">
+            <img src="{{ photo.thumbnail300px.url }}" alt={{ photo.title }}>
+        </a>
+        <h4>
+            <p>{{ photo.title }}</p>
+        </h4>
+        <p class="date">
+            Published {{ photo.publicate_date }} by {{ photo.author }}
+        </p>
+        {{ photo.body|truncatewords:30|linebreaks }}
+    {% endfor %}
+{% endblock %}
