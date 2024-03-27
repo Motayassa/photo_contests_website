@@ -6,13 +6,28 @@ from django.db import models
 from django.utils import timezone
 from PIL import Image, ImageOps
 
+from .managers import (
+    ApprovedManager,
+    DeletedManager,
+    ModerationManager,
+    RejectedManager,
+)
+
 
 class Photo(models.Model):
+
     class Status(models.TextChoices):
         APPROVED = "App", "Approved"
         REJECTED = "Rej", "Rejected"
         DELETED = "Del", "Deleted"
         MODERATION = "Mod", "Moderation"
+
+    # Managers_list
+    objects = models.Manager()
+    approved = ApprovedManager()
+    rejected = RejectedManager()
+    deleted = DeletedManager()
+    moderation = ModerationManager()
 
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="authors_photos", null=True
@@ -51,6 +66,7 @@ class Photo(models.Model):
     def make_thumbnail(self, image):
         im = Image.open(image)
         im = ImageOps.contain(im, (300, 300), method=Image.LANCZOS)
+        im = ImageOps.exif_transpose(im)
         im_io = BytesIO()
         im.save(im_io, self.valid_extension(image.name), optimize=False, quality=99)
         thumbnail = File(im_io, name=image.name)
