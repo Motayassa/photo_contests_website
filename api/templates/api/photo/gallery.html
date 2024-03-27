@@ -4,7 +4,7 @@
 
 {% block content %}
     {% for photo in photos %}
-        <a href="{% url 'api:photo_detail' photo.id %}">
+        <a href="{{ photo.get_absolute_url }}">
             <img src="{{ photo.thumbnail300px.url }}" alt={{ photo.title }}>
         </a>
         <h4>
