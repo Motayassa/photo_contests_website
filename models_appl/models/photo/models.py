@@ -80,4 +80,12 @@ class Photo(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("api:photo_detail", args=[self.id])
+        return reverse(
+            "api:photo_detail",
+            args=[
+                self.publicate_date.year,
+                self.publicate_date.month,
+                self.publicate_date.day,
+                self.slug,
+            ],
+        )
