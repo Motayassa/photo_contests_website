@@ -1,0 +1,8 @@
+{% extends "api/base.html" %}
+
+{% block titile %}{{photo.title}}{% endblock %}
+
+{% block content %}
+    <img src="{{ photo.photos_image.url }}" alt={{ photo.title }} style="max-width: 100%; height: auto;">
+    {{ post.body|linebreaks }}
+{% endblock %}
